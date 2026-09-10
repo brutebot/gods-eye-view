@@ -34,3 +34,30 @@ See DATA_SOURCES.md.
 
 Duplicate names exist upstream (two "Cordillera Oriental", a sliver + real
 "Canadian Shield", …); the lookup module resolves ties by largest area.
+
+## Data & Attribution
+
+This pack uses data from the Natural Earth 10m physical vectors dataset.
+
+- **Source:** Natural Earth
+- **Dataset:** 10m Physical Vectors
+- **Repository:** https://github.com/nvkelso/natural-earth-vector
+- **License:** Public domain
+- **Attribution:** Although attribution is not legally required, this project credits the dataset as **“Made with Natural Earth.”**
+
+### Data Processing
+
+The region data has been curated and optimized for offline use in the voice-annotation resolver. Processing includes:
+
+- Keeping named geographic features only
+- Removing irrelevant or invalid geometry
+- Simplifying polygon geometry to reduce file size
+- Removing very small MultiPolygon fragments
+- Removing zero-area geometry artifacts
+- Preserving the largest valid geometry for duplicate-name regions
+
+The resulting data is optimized for fast lookup and world-scale visualization while remaining completely network-independent.
+
+### Provenance
+
+The exact source version and curation metadata are stored in each data file's `meta` header for reproducibility.
